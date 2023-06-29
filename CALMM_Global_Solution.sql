@@ -62,14 +62,14 @@ create table TB_HLERA_INSCRICOES(
 
 
 
--- PROCEDURE CARGA INCIAL
+-- PROCEDURE PARA CARGA INCIAL
 
 set serveroutput on;
 
 drop table TB_LOG_ERROS;
 DROP PROCEDURE CARGA_INICIAL;
 
--- CRIA«√O TABELA REGISTRO LOGS
+-- CRIA√á√ÉO TABELA REGISTRO LOGS
 CREATE TABLE TB_LOG_ERROS (
   ID_LOG INT GENERATED ALWAYS AS IDENTITY,
   NM_USUARIO VARCHAR(100),
@@ -79,7 +79,7 @@ CREATE TABLE TB_LOG_ERROS (
   PRIMARY KEY (ID_LOG)
 );
 
--- CRIA«√O DA PROCEDURE DE CARGA INICIAL PARA PESSOA
+-- CRIA√á√ÉO DA PROCEDURE DE CARGA INICIAL PARA PESSOA
 CREATE OR REPLACE PROCEDURE CARGA_INICIAL AS
   v_nm_usuario VARCHAR2(100);
   v_dt_ocorrencia DATE;
@@ -92,43 +92,43 @@ BEGIN
     -- INSERINDO DADOS PESSOA
     SELECT COUNT(*) INTO v_cont_registro FROM TB_HLERA_PESSOA;
     IF v_cont_registro = 0 THEN
-        INSERT INTO TB_HLERA_PESSOA VALUES (1, 'Maria da Silva', 'mariadasilva@gmail.com', TO_DATE('12-05-1990', 'DD-MM-YYYY'),'Centro', 'S„o Paulo', 
+        INSERT INTO TB_HLERA_PESSOA VALUES (1, 'Maria da Silva', 'mariadasilva@gmail.com', TO_DATE('12-05-1990', 'DD-MM-YYYY'),'Centro', 'S√£o Paulo', 
         'Apto 123', 'SP', '01234567', '123','Rua das Orquideas', 'senha123', '11987654321', '1133456780', '123456781','12315428901', 0);
-        INSERT INTO TB_HLERA_PESSOA VALUES (2, 'Jo„o Santos', 'joaosantos@hotmail.com', TO_DATE('20-10-1985', 'DD-MM-YYYY'),'Vila Nova', 'Rio de Janeiro',
+        INSERT INTO TB_HLERA_PESSOA VALUES (2, 'Jo√£o Santos', 'joaosantos@hotmail.com', TO_DATE('20-10-1985', 'DD-MM-YYYY'),'Vila Nova', 'Rio de Janeiro',
         'Casa 456', 'RJ', '04567890', '456','Avenida Principal', 'senha456', '21999888777', '2198765434', '987654314','98765432109', 0);
         INSERT INTO TB_HLERA_PESSOA VALUES (3, 'Ana Souza', 'anasouza@yahoo.com', TO_DATE('15-03-1988', 'DD-MM-YYYY'),'Jardim das Flores', 'Curitiba', 
         'Casa 789', 'PR', '05678901', '789','Rua Principal', 'senha789', '41988777666', '4176543210', '545719621','98717526321', 0);
-        INSERT INTO TB_HLERA_PESSOA VALUES (4, 'Carolina Ferreira', 'carolinaferreira@gmail.com', TO_DATE('30-12-1987', 'DD-MM-YYYY'),'Jardim AmÈrica', 
+        INSERT INTO TB_HLERA_PESSOA VALUES (4, 'Carolina Ferreira', 'carolinaferreira@gmail.com', TO_DATE('30-12-1987', 'DD-MM-YYYY'),'Jardim Am√©rica', 
         'Belo Horizonte', 'Casa 789', 'MG', '03456789', '789','Rua das Palmeiras', 'senha789', '31996555444', '345321098', '765432143','10987654321', 0);
         INSERT INTO TB_HLERA_PESSOA VALUES (5, 'Rafaela Santos', 'rafaelasantos@hotmail.com', TO_DATE('18-09-1993', 'DD-MM-YYYY'),'Centro', 'Recife', 
         'Apto 123', 'PE', '05678901', '123','Avenida Central', 'senha1y23', '81955444333', '8143210987', '543210981','10137684321', 0);
-        INSERT INTO TB_HLERA_PESSOA VALUES (6, 'Maria Silva', 'masilva@gmail.com', TO_DATE('15-05-1990', 'DD-MM-YYYY'),'Centro', 'S„o Paulo', 
+        INSERT INTO TB_HLERA_PESSOA VALUES (6, 'Maria Silva', 'masilva@gmail.com', TO_DATE('15-05-1990', 'DD-MM-YYYY'),'Centro', 'S√£o Paulo', 
         'Apto 101', 'SP', '01010000', '19','Rua das Galhardas', '999111', '11987652620', '1123456795', '598023841','12345678910', 1);
-        INSERT INTO TB_HLERA_PESSOA VALUES (7, 'Jo„o Oliveira', 'joao.oliveira@hotmail.com', TO_DATE('20-09-1985', 'DD-MM-YYYY'),'Jardins', 
+        INSERT INTO TB_HLERA_PESSOA VALUES (7, 'Jo√£o Oliveira', 'joao.oliveira@hotmail.com', TO_DATE('20-09-1985', 'DD-MM-YYYY'),'Jardins', 
         'Rio de Janeiro', 'Casa 20', 'RJ', '20000001', '456','Avenida Brasil', 'abc123', '21987654321', '2134567890', '998877663','98765432100', 1);
-        INSERT INTO TB_HLERA_PESSOA VALUES (8, 'Pedro Santos', 'pedro.santos@gmail.com', TO_DATE('22-07-1992', 'DD-MM-YYYY'),'Vila Madalena', 'S„o Paulo', 
+        INSERT INTO TB_HLERA_PESSOA VALUES (8, 'Pedro Santos', 'pedro.santos@gmail.com', TO_DATE('22-07-1992', 'DD-MM-YYYY'),'Vila Madalena', 'S√£o Paulo', 
         'Casa 5', 'SP', '05410000', '789','Rua dos Pinheiros', 'senh6', '11987651234', '1156789012', '334455667','23456789012', 1);
         INSERT INTO TB_HLERA_PESSOA VALUES (9, 'Ana Oliveira', 'ana.oliveira@hotmail.com', TO_DATE('12-03-1988', 'DD-MM-YYYY'),'Copacabana', 
-        'Rio de Janeiro', 'Apartamento 15', 'RJ', '22011001', '101','Avenida Atl‚ntica', 'abrenut56', '21987655678', '2178901234', '777665544','34567890123', 1);
+        'Rio de Janeiro', 'Apartamento 15', 'RJ', '22011001', '101','Avenida Atl√¢ntica', 'abrenut56', '21987655678', '2178901234', '777665544','34567890123', 1);
         INSERT INTO TB_HLERA_PESSOA VALUES (10, 'Luisa Mendes', 'luisa.mendes@gmail.com', TO_DATE('05-11-1993', 'DD-MM-YYYY'),'Centro', 'Belo Horizonte', 
         'Bloco 3', 'MG', '30000123', '6786','Avenida Principal', 'senuuuu78', '31987654321', '3123456789', '755667788','45678901234', 1);
         COMMIT;    
     ELSE
-      RAISE_APPLICATION_ERROR(-20001, 'A tabela PESSOA j· contÈm registros.');
+      RAISE_APPLICATION_ERROR(-20001, 'A tabela PESSOA j√° cont√©m registros.');
     END IF;
      -- INSERINDO DADOS CAMPANHA
     SELECT COUNT(*) INTO v_cont_registro FROM TB_HLERA_CAMPANHA;
      IF v_cont_registro = 0 THEN
-        INSERT INTO TB_HLERA_CAMPANHA VALUES (1, 10, 'Campanha de Alimentos', 'Campanha de doaÁ„o de alimentos em geral.', 0);
+        INSERT INTO TB_HLERA_CAMPANHA VALUES (1, 10, 'Campanha de Alimentos', 'Campanha de doa√ß√£o de alimentos em geral.', 0);
         INSERT INTO TB_HLERA_CAMPANHA VALUES (2, 15, 'Campanha de Roupas', 'Campanha de roupas em geral.', 1);
-        INSERT INTO TB_HLERA_CAMPANHA VALUES (3, 8, 'Outros', 'Campanhas de doaÁıes em geral, o famoso "tudo vale".', 2);
+        INSERT INTO TB_HLERA_CAMPANHA VALUES (3, 8, 'Outros', 'Campanhas de doa√ß√µes em geral, o famoso "tudo vale".', 2);
         INSERT INTO TB_HLERA_CAMPANHA VALUES (4, 20, 'Campanha de Alimentos', 'Doamos alimentos.', 0);
         INSERT INTO TB_HLERA_CAMPANHA VALUES (5, 12, 'Campanha de Roupas', 'Doamos roupas', 1);
         COMMIT;
       ELSE
-      RAISE_APPLICATION_ERROR(-20001, 'A tabela CAMPANHA j· contÈm registros.');
+      RAISE_APPLICATION_ERROR(-20001, 'A tabela CAMPANHA j√° cont√©m registros.');
     END IF;
-    -- INSERINDO DADOS INSCRI«’ES
+    -- INSERINDO DADOS INSCRI√á√ïES
      SELECT COUNT(*) INTO v_cont_registro FROM TB_HLERA_INSCRICOES;
      IF v_cont_registro = 0 THEN
         INSERT INTO TB_HLERA_INSCRICOES VALUES (1, 1);
@@ -138,7 +138,7 @@ BEGIN
         INSERT INTO TB_HLERA_INSCRICOES VALUES (5, 5);
         COMMIT;
     ELSE
-      RAISE_APPLICATION_ERROR(-20001, 'A tabela INSCRICOES j· contÈm registros.');
+      RAISE_APPLICATION_ERROR(-20001, 'A tabela INSCRICOES j√° cont√©m registros.');
     END IF;
   EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
@@ -153,7 +153,7 @@ BEGIN
       IF DBMS_TRANSACTION.LOCAL_TRANSACTION_ID IS NOT NULL THEN
         ROLLBACK;
       END IF;
-      RAISE_APPLICATION_ERROR(-20002, 'Ocorreu uma violaÁ„o de chave ˙nica.');
+      RAISE_APPLICATION_ERROR(-20002, 'Ocorreu uma viola√ß√£o de chave √∫nica.');
 
     WHEN OTHERS THEN
       v_nm_usuario := USER;
@@ -186,19 +186,19 @@ END;
 CREATE OR REPLACE PROCEDURE PESQUISA_DOADOR_BENEFICIARIO
 IS
 BEGIN
-  -- PESQUISA PARA MOSTRAR OS USU¡RIOS DOADORES
+  -- PESQUISA PARA MOSTRAR OS USU√ÅRIOS DOADORES
   DBMS_OUTPUT.PUT_LINE('.DOADORES');
   FOR TB_HLERA_PESSOA IN (SELECT p.nm_pessoa
                           FROM TB_HLERA_PESSOA p
                           WHERE ROWNUM <= 5)
   LOOP
-    DBMS_OUTPUT.PUT_LINE('Usu·rio encontrado: Nome = ' || tb_hlera_pessoa.nm_pessoa);
+    DBMS_OUTPUT.PUT_LINE('Usu√°rio encontrado: Nome = ' || tb_hlera_pessoa.nm_pessoa);
   END LOOP;
 
   DBMS_OUTPUT.NEW_LINE;
   
-  -- PESQUISA PARA MOSTRAR OS USU¡RIOS BENEFICI¡RIOS
-  DBMS_OUTPUT.PUT_LINE('.BENEFICI¡RIOS');
+  -- PESQUISA PARA MOSTRAR OS USU√ÅRIOS BENEFICI√ÅRIOS
+  DBMS_OUTPUT.PUT_LINE('.BENEFICI√ÅRIOS');
   FOR TB_HLERA_PESSOA IN (SELECT nm_pessoa
                           FROM (
                             SELECT nm_pessoa, ROW_NUMBER() OVER (ORDER BY id_pessoa) AS row_num
@@ -207,7 +207,7 @@ BEGIN
                           )
                           WHERE row_num <= 5)
   LOOP
-    DBMS_OUTPUT.PUT_LINE('Usu·rio encontrado: Nome = ' || tb_hlera_pessoa.nm_pessoa);
+    DBMS_OUTPUT.PUT_LINE('Usu√°rio encontrado: Nome = ' || tb_hlera_pessoa.nm_pessoa);
   END LOOP;
   
   DBMS_OUTPUT.NEW_LINE;
