@@ -1,5 +1,5 @@
 <h5>Obs:. Esse Git so contém as Querys SQL e PL/SQL do projeto</h5>
-<h5>Para acessar o back-end do projeto, acesse git: https://github.com/MaateusMDS/Hlera.git</h5><br><br>
+<h5>Para acessar o back-end do projeto, acesse git: https://github.com/MaateusMDS/Hlera.git</h5><br>
 <h5></h5>
 
 
